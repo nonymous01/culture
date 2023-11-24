@@ -16,7 +16,7 @@
             {% endif %}
             <form action="{% url 'connexion' %}" method="post">
                 {% csrf_token %}
-                <input type="text" name="name" placeholder="name" id="">
+                <input type="text" name="username" placeholder="name" id="">
                 <input type="text" name="password" placeholder="password" id="">
                 <button type="submit">Se connecter</button>
             </form>

@@ -3,7 +3,7 @@ from auth_app.models import Utilisateur
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
-    list_display=('name','password')
+    list_display=('username','email','password')
 
 
 admin.site.register(Utilisateur, UserAdmin)

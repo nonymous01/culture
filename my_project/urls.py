@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.inscription, name='inscription' ),
     path('connexion/',views.connexion, name="connexion"),
-    path('deconnexion', views.deconnexion, name="deconnexion")
+    path('deconnexion', views.deconnexion, name="deconnexion"),
+    path('profile', views.profile, name="profile"),
+    path('liste/', views.liste_utilisateurs, name='liste_utilisateurs'),
 ]
