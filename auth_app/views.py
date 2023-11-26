@@ -8,28 +8,29 @@ from .models import Utilisateur
 
 
 #pour l'inscription 
-def inscription(request):
-    if request.method =="POST":
-        form = AuthUser(request.POST)
-        if form.is_valid():
-            user = form.save()
-            print(f"Utilisateur créé : nom: {user.username} password :{user.password} email: {user.email}")
-            return redirect ('connexion')
-    else:
-        form = AuthUser()
-    return render(request, 'auth_app/inscription.html', {'form':form})
 # def inscription(request):
-#     if request.method == 'POST':
+#     if request.method =="POST":
 #         form = AuthUser(request.POST)
 #         if form.is_valid():
-#             form.save(commit=False)
-#             form.instance.email = form.cleaned_data['email']
 #             user = form.save()
 #             print(f"Utilisateur créé : nom: {user.username} password :{user.password} email: {user.email}")
 #             return redirect ('connexion')
 #     else:
 #         form = AuthUser()
-#     return render(request, 'auth_app/inscription.html', {'form': form})
+#     return render(request, 'auth_app/inscription.html', {'form':form})
+
+def inscription(request):
+    if request.method == 'POST':
+        form = AuthUser(request.POST)
+        if form.is_valid():
+            form.save(commit=False)
+            form.instance.email = form.cleaned_data['email']
+            user = form.save()
+            print(f"Utilisateur créé : nom: {user.username} password :{user.password} email: {user.email}")
+            return redirect ('connexion')
+    else:
+        form = AuthUser()
+    return render(request, 'auth_app/inscription.html', {'form': form})
             
 # pour la connexion
 def connexion(request):
