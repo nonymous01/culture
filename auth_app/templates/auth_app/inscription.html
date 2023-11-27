@@ -1,14 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'insc.css' %}">
+
 </head>
 <body>
-    <div class="contenaire">
+    <div class="dex2" >
         
-        <div class="form">
+        <div class="form"  id="vjk" >
             {%  if messages %}
             <div class="erro">
                 {% for message in messages %}
@@ -16,14 +20,19 @@
                 {% endfor %}
             </div>
             {% endif %}
-            <form action="{% url 'inscription' %}" method="post">
+            <form action="{% url 'inscription' %}" method="post" class="item-form">
                 {% csrf_token %}
-                <H1>Inscription</H1>
+                <H1>Votre inscription</H1>
                 {{ form.as_p }}
-                <button type="submit">S'inscrire</button>
+                <button type="submit" style="padding: 10px 20px;background-color: #07a35a;border: none;border: 10px;color: white;">je m'inscrit</button>
             </form>
-            <p class="olink">Deja inscrit! <a href="{% url 'connexion' %}">Se connecter</a></p>
+            <p class="olink">Deja inscrit! <a href="{% url 'connexion' %}">je veux me connecter !</a></p>
         </div>
     </div>
 </body>
 </html>
+
+
+
+
+
