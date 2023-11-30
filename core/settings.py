@@ -27,8 +27,7 @@ import os
 
 DEBUG = os.environ.get("DEBUG",True)
 
-#ALLOWED_HOSTS = [".onrender.com"]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".onrender.com"]
 
 
 
