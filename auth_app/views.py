@@ -47,6 +47,7 @@ def connexion(request):
     return render(request, 'auth_app/connexion.html')
 
 #pour la deconnexion
+@login_required
 def deconnexion(request):
     logout(request)
     return redirect('connexion')

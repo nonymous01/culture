@@ -1,14 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'auth_app/profil.css' %}">
 </head>
 <body>
-    <h1> vous etre connecter</h1>
-    <button>
-        <a href="{% url 'deconnexion' %}">deconnexion</a>
-    </button>
+    <div class="conecter">
+        <div class="nav1"><strong>LOGO_YS</strong></div>
+        <div class="nav2"><strong><a href="">Arts</a></strong></div>
+        <div class="nav3"><strong><a href="">Artisanat</a></strong></div>
+        <div class="nav4"><strong> 🤓</strong></div>
+        
+    
+</div>
+<div class="ell">
+    <img src="{% static 'auth_app/image/art.png' %}" alt="" class="image_accueil">
+    <div class="texte">
+        <p class="nouvelle">NOUVELLES DE NOTRE GALERIE D'ART</p>
+        <p class="carte">Carte interactive mettant en lumière l'artisanat et l'art 
+            uniques de différentes régions du monde
+        </p>
+    </div>
+    <div class="voir">
+        voir plus
+    </div>
+    <div class="deconexion"><a href="{% url 'deconnexion' %}">deconnexion</a></div>
+</div>
 </body>
 </html>

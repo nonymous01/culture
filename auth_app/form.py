@@ -21,3 +21,12 @@ class AuthUser(UserCreationForm):
 #class meta pour personnaliser les chants du formulaire
     class Meta(UserCreationForm.Meta):
         fields=UserCreationForm.Meta.fields +("password1","password2")
+
+
+    def __init__(self, *args, **kwargs):
+        super(AuthUser, self).__init__(*args, **kwargs)
+        # Ajoutez le placeholder pour chaque champ ici
+        self.fields['username'].widget.attrs['placeholder'] = 'Nom d\'utilisateur'
+        self.fields['password1'].widget.attrs['placeholder'] = 'Mot de passe'
+        self.fields['password2'].widget.attrs['placeholder'] = 'Confirmer le mot de passe'
+        self.fields['email'].widget.attrs['placeholder'] = 'Adresse e-mail'
