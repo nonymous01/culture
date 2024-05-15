@@ -8,7 +8,7 @@
   body {
       width: 100%;
       overflow: hidden;
-      background-color: #2407a3;
+      background-color: #ffffff;
     }
 
   label{
@@ -18,7 +18,7 @@
     body {
         width: 100%;
         overflow: hidden;
-        background-color: violet;
+        background-color: rgb(255, 255, 255);
     }
     a {
         text-decoration: none;
@@ -107,7 +107,7 @@
     .item-form input{
         height: 25px;
         width: 100%;
-        background-color: rgba(146, 151, 151, 0.192);
+        box-shadow: 0.5px 0.5px 5px 0.5px  rgb(67, 43, 90);
         border: 1px solid #07a35a;
         border-radius: 8px;
         color: #07a35a;
@@ -117,7 +117,7 @@
     .item-form textarea{
         height: 50px;
         width: 100%;
-        background-color: rgba(146, 151, 151, 0.192);
+        box-shadow: 0.5px 0.5px 5px 0.5px  rgb(67, 43, 90);
         border: 1px solid #07a35a;
         border-radius: 8px;
         color: #07a35a;
@@ -323,7 +323,7 @@
     body {
         width: 100%;
         overflow: hidden;
-        background-color: #07a35a;
+        background-color: #ffffff;
     }
     a {
         text-decoration: none;
