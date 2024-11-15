@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-tyy)ue27qaedv5t0hgy7&!c+s+m36dvk3v=r5!)ec@dfk=b6vl
 import os
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# DEBUG = os.environ.get("DEBUG",True)
-DEBUG = True
+DEBUG = os.environ.get("DEBUG",True)
+# DEBUG = True
 
-ALLOWED_HOSTS = []
-#ALLOWED_HOSTS = [".onrender.com"]
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".onrender.com"]
 
 
 
