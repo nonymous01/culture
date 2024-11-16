@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
-from .models import Utilisateur
+from .models import Utilisateur,ServiceRequest
 
 
 #pour l'inscription 
@@ -18,6 +18,22 @@ from .models import Utilisateur
 #     else:
 #         form = AuthUser()
 #     return render(request, 'auth_app/inscription.html', {'form':form})
+
+
+def home(request):
+    return render(request, 'auth_app/index.html')
+def about(request):
+    return render(request, 'auth_app/about.html')
+
+def contact(request):
+    return render(request, 'auth_app/contact.html')
+
+def service(request):
+    return render(request, 'auth_app/service.html')
+
+def team(request):
+    return render(request, 'auth_app/team.html')
+
 
 def inscription(request):
     if request.method == 'POST':
@@ -40,7 +56,7 @@ def connexion(request):
         user= authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('profile')
+            return redirect('home')
         
         else:
             messages.error(request, "nom ou mot de pass incorect")
@@ -61,3 +77,6 @@ def liste_utilisateurs(request):
     utilisateurs = Utilisateur.objects.all()
     print(utilisateurs)
     return render(request, 'auth_app/listes.html', {'utilisateurs': utilisateurs})
+
+
+

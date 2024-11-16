@@ -1,0 +1,55 @@
+table{
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    width: 90%;
+}
+.supprimer{
+    color: white;
+    height: 30px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    text-decoration: none;
+    padding-top: 10px;
+}
+
+.modifier{
+    color: white;
+    height: 30px;
+    padding-top: 10px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    text-decoration: none;
+}
+td{
+    padding: 7px;
+}
+.redd{
+    padding: 0;
+    background-color: rgb(250, 100, 13);
+    margin: 0 auto;
+}
+
+.bluee{
+    padding: 0;
+    margin: 0 auto;
+    background-color: rgba(19, 160, 248, 0.991);
+}
+.vert{
+    padding: 0;
+    margin: 0 auto;
+    background-color: rgba(19, 248, 149, 0.991);
+    height: 30px;
+    padding-top: 10px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    text-decoration: none;
+}
+
+.ajouter{
+    padding: 0;
+    margin: 0 auto;
+}

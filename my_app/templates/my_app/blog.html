@@ -1,0 +1,79 @@
+
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href=" {% static 'css/blog.css' %} ">
+</head>
+<body>
+            <div class="nav1">
+                <div class="element1"><p>YS‿BLOG</p><strong> <a href="" id="affich"></a></strong></div>
+                <div class="element2">
+                    <div class="bergb">
+                        <input type="checkbox" id="berg">
+                        <label for="berg"><img src="{% static 'auth_app/image/blog.css' %} "  alt=""></label>
+                        <div class="hgfd">
+                            <ul>
+                                <li ><a href="./login" >DECONNEXION</a></li>
+                                <li ><a href="" >ACCUEIL</a></li>
+                                <li ><a href="./admin">PROFIL</a></li>
+                                <li><a href="./image">myblog</a></li>
+                                <li><a href="#azer">CATEGORIE</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <ul class="dd">                     
+                        <li ><a href="{% url 'blog' %}">My‿BLOG</a></li>
+                        <li><a href="{% url 'list_view' %}">Ajouter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <header>
+    <div class="full">
+        <div class="bag">
+            <p>La todolist offre une gestion efficace des tâches. <br> Consignez, organisez et suivez vos objectifs.  Attribuez des statuts pour <br> prioriser, mettez à jour régulièrement,  et utilisez les commentaires pour une <br> collaboration transparente.  Simplifiez votre productivité <br> au quotidien. </p>
+            <p class="class_p">Mes Taches</p >
+        </div>
+        <div class="vide"></div>
+        <div class="orange"></div>  
+        <!-- <div class="tect1" >  </div>  -->
+    </div>
+    <div class="image_cont">
+        <img src="https://blog.lesjeudis.com/wp-content/uploads/2019/09/developper-ma-carriere-informatique-sans-bugs-1600-800x379.jpg" alt="">
+    </div>
+    <div class="image_txt">
+        <h2>BIENVENUE!</h2> <br><br>
+        <p>Todolist : Facilitez la gestion de vos tâches. <br> Exprimez-vous en ajoutant des tâches maîtrisées <br> et invitez  la collaboration avec des commentaires. Optimisez votre productivité avec une organisation transparente et efficace</p>
+    </div>
+
+
+    <h3 class="classp">Mes Taches</H3 >
+    {% for data in datas %}
+        <div class="content">
+            <div class="tache">Tache : {{data.id}}</div>
+            <h3 class="TITRE">TITRE</h3>
+            <div class="titre">{{data.titre}}</div><br>
+            <h3 class="DESCRIPTION">DESCRIPTION</h3>
+            <div class="description">{{data.description}}</div>
+            <h3 class="STATUS">STATUS</h3>
+            {% if data.status  %}
+                <div class="status" style="color: rgb(255, 255, 255);background-color: rgb(5, 5, 190);" >{{data.status}}</div>
+            {% else %}
+                <div class="status" style="color: rgb(255, 255, 255);background-color: rgb(177, 0, 38); " >{{data.status}}</div>
+            {% endif %}
+        </div><br><br><br>
+    {% endfor %} 
+          
+</header>
+    
+      
+            
+
+</body>
+</html>

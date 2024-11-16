@@ -26,10 +26,10 @@ import os
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = os.environ.get("DEBUG",True)
-# DEBUG = True
+DEBUG = True
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = [".onrender.com"]
+ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = [".onrender.com"]
 
 
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'auth_app',
+    'my_app',
 ]
 
 MIDDLEWARE = [

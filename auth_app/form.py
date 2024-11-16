@@ -1,5 +1,6 @@
 from  django import forms
 from django.contrib.auth.forms import UserCreationForm
+from .models import ServiceRequest
 
 
 class AuthUser(UserCreationForm):
@@ -30,3 +31,12 @@ class AuthUser(UserCreationForm):
         self.fields['password1'].widget.attrs['placeholder'] = 'Mot de passe'
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirmer le mot de passe'
         self.fields['email'].widget.attrs['placeholder'] = 'Adresse e-mail'
+
+
+from django import forms
+from .models import ServiceRequest
+from .models import Article
+
+
+
+

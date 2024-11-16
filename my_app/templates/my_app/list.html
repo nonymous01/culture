@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+ <div class="nav1">
+                <div class="element1"><p>YS‿BLOG</p><strong> <a href="" id="affich"></a></strong></div>
+                <div class="element2">
+                    <div class="bergb">
+                        <input type="checkbox" id="berg">
+                        <label for="berg"><img src="{% static 'auth_app/image/blog.css' %} "  alt=""></label>
+                        <div class="hgfd">
+                            <ul>
+                                <li ><a href="./login" >DECONNEXION</a></li>
+                                <li ><a href="" >ACCUEIL</a></li>
+                                <li ><a href="./admin">PROFIL</a></li>
+                                <li><a href="./image">myblog</a></li>
+                                <li><a href="#azer">CATEGORIE</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <ul class="dd">                     
+                        {% comment %} <li><a href="{% url 'list_view' %}">MesPostes</a></li> {% endcomment %}
+                        <li><a href="{% url 'blog' %}">VoirMesPostes</a></li>
+                    </ul>
+                </div>
+            </div><br><br><br>
+            
+    <div class="ajout"><a href="{% url 'add' %}" >ajouter une tache</a></div>
+
+    <table border="1">
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+        </tr>
+        {% for data in datas %}
+            <tr>
+                <td>{{data.titre}}</td>
+                <td>{{data.description}}</td>
+                
+                <td class="redd"><a href="{% url 'delete' id=data.id %}" class="supprimer"><img src="{% static 'image/delete.png' %}" height="20px" alt=""></a></td>
+                <td class="bluee"><a href="{% url 'update' id=data.id %}" class="modifier"><img src="{% static 'image/edit.png' %}" alt=""></a></td>
+                <td class="vert"><a href="{% url 'home' %}" class="ajouter"><img src="{% static 'image/add.png' %}" height="30px" alt=""></a></td>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+   
+</body>
+</html>
